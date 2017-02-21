@@ -7,12 +7,22 @@
     </head>
 
     <script>
-        
+
         var students = [
             ['Jeff', '12345678'],
             ['Kyle', '12345679'],
             ['Steve', '12345671']
         ]
+
+        function yesno(thecheckbox, thelabel) {
+            var checkboxvar = document.getElementById(thecheckbox);
+            var labelvar = document.getElementById(thelabel);
+            if (checkboxvar.checked == false) {
+                labelvar.innerHTML = "Not required";
+            } else {
+                labelvar.innerHTML = "Required Field";
+            }
+        }
         
         function validateNumber() {
             var num;
@@ -31,13 +41,14 @@
 
             if (!filter.test(email.value)) {
                 alert('Please provide a valid email address');
-                return false;
+                http://cdn.edgecast.steamstatic.com/steam/apps/248390/ss_d0d2dbc49c4c1612480c83d76c66a03228bfdef3.116x65.jpg?t=1472104355
+                        return false;
             }
         }
-        
+
         function verification() {
             if (true) {
-                
+
             }
         }
     </script>
@@ -61,18 +72,21 @@
         <tr>
             <td>Student Email:</td>
             <td> <input type='text' id='email'/></td>
-            <td>Required Field</td>
+            <td><label for="mailing" name="required" id="required">Not required</label></td>
         </tr>
         <tr>
             <td></td>
-            <td> <input type="checkbox" name="mail" value=""> Email me a transaction confirmation<br>  </td>
+            <td> <input type="checkbox" class="checkit" name="mail" id="mail" value="1" onclick="yesno('mail', 'required')"/> Email me a transaction confirmation<br>  </td>
         </tr>
         <tr>
-            <td><input type="submit" value="Submit" onclick="validateNumber();validateEmail();"></td>
+            <td> <select>
+                    <option value="student">Student Registration</option>
+                    <option value="class">Class Registration</option>
+                    <option value="summer">Summer Registration</option>
+                </select></td>
+            <td><input type="submit" value="Submit" onclick="validateNumber();
+                    validateEmail();"></td>
         </tr>
-
-
-
 
     </table>
 </body>

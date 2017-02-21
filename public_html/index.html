@@ -7,13 +7,13 @@
     </head>
 
     <script>
-
+        //creates 3 students
         var students = [
             ['Jeff', '12345678'],
             ['Kyle', '12345679'],
             ['Steve', '12345671']
         ]
-
+        //Function for checkbox label
         function yesno(thecheckbox, thelabel) {
             var checkboxvar = document.getElementById(thecheckbox);
             var labelvar = document.getElementById(thelabel);
@@ -23,7 +23,7 @@
                 labelvar.innerHTML = "Required Field";
             }
         }
-        
+        //Validates number, input must be numerical + have 8 digits
         function validateNumber() {
             var num;
             num = document.getElementById("number").value;
@@ -34,7 +34,7 @@
             }
             return true;
         }
-
+        //validates Email
         function validateEmail() {
 
             var email = document.getElementById('email');
@@ -46,7 +46,7 @@
             }
             return true;
         }
-
+        //runs if validated, checks for corresponding name/number
         function verification() {
             if (validateNumber || validateEmail) {
                 var num;

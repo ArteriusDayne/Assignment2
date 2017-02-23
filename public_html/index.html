@@ -46,24 +46,26 @@
             }
             return true;
         }
-        //runs if validated, checks for corresponding name/number
-        function verification() {
-            if (validateNumber || validateEmail) {
-                var num;
-                num = document.getElementById("number").value;
-                var name;
-                name = document.getElementById("name");
-                for (int i = 0; i++; i < students.length())
-                    if (students[i][0] == name)
-                        if (students[i][1] == num)
-                            alert('Welcome ' + name + '!');
+        
+        function verify() {
+            if ((validateEmail()) && validateNumber()) {
+                var name = document.getElementById("name");
+                var number = document.getElementById("number").value;
+                for (var i = 0; i++; i < students.length()) {
+                    if (students[i][0] == name) {
+                        if (students[i][1] == number) {
+                            alert("Welcome!");
+                        }
+                    }
+                }
             }
         }
+
     </script>
 
     <body>
 
-        <table style="width: 80%"> 
+        <table> 
             <tr>
             <h1>Student Transaction Form</h1>
         </tr>
@@ -92,8 +94,7 @@
                     <option value="class">Class Registration</option>
                     <option value="summer">Summer Registration</option>
                 </select></td>
-            <td><input type="submit" value="Submit" onclick="validateNumber();
-                    validateEmail();"></td>
+            <td><input type="submit" value="Submit" onclick="validateNumber();verify();"></td>
         </tr>
 
     </table>
